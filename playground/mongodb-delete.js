@@ -8,18 +8,6 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
     console.log('Connect to mongodb server')
     const db=client.db('TodoApp')
 
-    /*******************/
-    /* find the object */
-    /*******************/
-    // db.collection('Todos').find({
-    //     completed:false
-    // }).toArray().then((docs)=>{
-    //     console.log('Todos');
-    //     console.log(JSON.stringify(docs,undefined,2));
-    // },(err)=>{
-    //     console.log('Unabe to fecth Todos',err)
-    // });
-
 
     /*********************/
     /* count the objects */
@@ -29,6 +17,26 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
     // },(err)=>{
     //     console.log('Unable to fecth Todos',err)
     // });
+
+
+    /**********************/
+    /* delete the objects */
+    /**********************/
+    // deleteMany
+    // db.collection('Todos').deleteMany({text:'Eat lunch'}).then((result)=>{
+    //     console.log(result);
+    // });
+
+    //deleteOne
+    // db.collection('Todos').deleteOne({text:'Eat lunch'}).then((result)=>{
+    //     console.log(result);
+    // });
+
+    //findOneAndDelete
+    // db.collection('Todos').findOneAndDelete({completed:false}).then((result)=>{
+    //     console.log(result);
+    // });
+
 
     //close connection
     client.close();
